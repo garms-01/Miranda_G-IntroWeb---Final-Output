@@ -1,0 +1,460 @@
+/* ---------- THEME COLORS ---------- */
+:root {
+  --black:        #0b0b0b;
+  --dark:         #111111;
+  --grey-band:    #bdbdbd;
+  --white:        #ffffff;
+  --muted:        #a9a9a9;
+  --accent:       #b80a0a;
+
+  /* ---------- Layout Settings ---------- */
+  --container:    1100px;
+}
+
+/* ========== GLOBAL ========== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  margin: 0;
+  color: var(--white);
+  background: var(--black);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1200;
+  background: linear-gradient(180deg, rgba(6,6,6,0.6), rgba(6,6,6,0.15));
+  backdrop-filter: blur(4px);
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--white);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/mainImage.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.45);
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 48px 0;
+}
+
+.hero-title {
+  font-size: 96px;
+  line-height: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.hero-title .champ {
+  color: var(--accent);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  color: var(--muted);
+  font-weight: 400;
+  max-width: 820px;
+}
+
+/* ========== ACCENT BAR ---------- */
+.accent-bar {
+  display: inline-block;
+  width: 5px;
+  height: 35px;
+  background-color: var(--accent);
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+/* ========== SECTIONS WITH SKEW ---------- */
+.skew-band {
+  position: relative;
+  background: var(--black);
+  padding: 80px 0 40px;
+}
+
+.skew-band::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 110px;
+  background: var(--grey-band);
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+/* ========== ABOUT & LOCATIONS ========== */
+.band-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.about-img,
+.coach-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+
+.about-text h2,
+.locations-title,
+.about-box h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 18px;
+  color: var(--white);
+}
+
+.locations-title {
+  color: var(--accent);
+}
+
+.about-text p,
+.about-box p,
+.locations-section .about-text p,
+.coach-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.hero-title .champ {
+  color: var(--accent);
+}
+
+.btn-accent {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-accent:hover {
+  background: #ff1a1a; /* slightly brighter on hover */
+  transform: translateY(-2px);
+}
+
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+  background: #222;
+  color: var(--white);
+  padding: 80px 0;
+}
+
+.contact-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 45%;
+  background: #2b2b2b;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.contact-details li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #ff1a1a;
+}
+
+.map-section iframe {
+  margin-top: 50px;
+  border: none;
+}
+
+/* ---------- SOCIAL ICONS ---------- */
+.socials-contact img,
+.socials-footer img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.socials-contact img:hover,
+.socials-footer img:hover {
+  transform: scale(1.1);
+}
+
+/* ========== CTA SECTION ========== */
+.cta-dark {
+  background: var(--dark);
+  padding: 60px 0;
+}
+
+.cta-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.cta-accent {
+  color: var(--accent);
+}
+
+/* ========== ABOUT COACHES ---------- */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.coach-card {
+  text-align: center;
+}
+
+.coach-card h3 {
+  color: var(--white);
+  font-weight: 700;
+  margin: 10px 0 6px;
+}
+
+.coach-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ========== FOOTER ---------- */
+.site-footer {
+  background: var(--black);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ========== RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  .hero-title { font-size: 72px; }
+}
+
+@media (max-width: 900px) {
+  .band-inner { grid-template-columns: 1fr; }
+  .about-text { order: 2; }
+  .about-media { order: 1; }
+}
+
+/* ---------- MOBILE FIX: VERTICAL NAV & TEXT ---------- */
+@media (max-width: 700px) {
+  /* Hide hero background */
+  .hero-bg {
+    display: none;
+  }
+
+  /* Make nav vertical and centered */
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .main-nav ul {
+    display: flex !important; /* force flex in case overridden */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav a {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Hero text adjustments */
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    max-width: 90%;
+    margin: 12px auto 0;
+    text-align: center;
+  }
+
+  /* Section headings */
+  .about-text h2,
+  .about-box h2,
+  .locations-title,
+  .cta-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* Coaches section */
+  .coach-card h3 {
+    font-size: 18px;
+  }
+
+  .coach-card p {
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .btn-accent,
+  .btn-primary {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* About / band-inner grid */
+  .band-inner {
+    padding-top: 20px;
+  }
+    .skew-band {
+    padding: 60px 0 20px; /* reduce top padding */
+  }
+
+  .skew-band::before {
+    height: 60px; /* smaller skew height */
+  }
+}
+
+
+
+
+
+
